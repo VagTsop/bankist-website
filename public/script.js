@@ -36,7 +36,6 @@ btnScrollTo.addEventListener('click', function (e) {
 });
 
 // Page navigation
-
 document.querySelector('.nav__links').addEventListener('click', function (e) {
   e.preventDefault();
   if (e.target.classList.contains('nav__link')) {
@@ -49,12 +48,8 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
-
-//tabs.forEach(t => t.addEventListener('click', () => console.log('TAB')));
-
-// Attach event handler to parent element with event delegation
 tabsContainer.addEventListener('click', function (e) {
-  const clicked = e.target.closest('.operations__tab'); // use closest method in order to get the parent element of span which is the button // now wherever we click the button we get the same element even though we click on button or on span because it finds the closest parent element with this class name
+  const clicked = e.target.closest('.operations__tab');
 
   // Guard clause
   if (!clicked) return;
